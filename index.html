@@ -1,0 +1,371 @@
+<!doctype html>
+<html amp lang="en">
+  <head>
+    <meta charset="utf-8">
+    <script async src="https://cdn.ampproject.org/v0.js"></script>
+    <script async custom-element="amp-carousel" src="https://cdn.ampproject.org/v0/amp-carousel-0.1.js"></script>
+    <script async custom-element="amp-fit-text" src="https://cdn.ampproject.org/v0/amp-fit-text-0.1.js"></script>
+    <script async custom-element="amp-selector" src="https://cdn.ampproject.org/v0/amp-selector-0.1.js"></script>
+    <script async custom-element="amp-bind" src="https://cdn.ampproject.org/v0/amp-bind-0.1.js"></script>
+    <title>Hello, AMPs</title>
+    <!--   Change the Below later -->
+    <link rel="canonical" href="http://example.ampproject.org/article-metadata.html">
+    <meta name="viewport" content="width=device-width,minimum-scale=1,initial-scale=1">
+    <link href="https://fonts.googleapis.com/css?family=Sail|Simonetta" rel="stylesheet">
+
+    <script type="application/ld+json">
+
+      {
+        "@context": "http://schema.org",
+        "@type": "NewsArticle",
+        "headline": "Open-source framework for publishing content",
+        "datePublished": "2015-10-07T12:02:41Z",
+        "image": [
+          "logo.jpg"
+        ]
+      }
+    </script>
+    <style amp-boilerplate>body{-webkit-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-moz-animation:-amp-start 8s steps(1,end) 0s 1 normal both;-ms-animation:-amp-start 8s steps(1,end) 0s 1 normal both;animation:-amp-start 8s steps(1,end) 0s 1 normal both}@-webkit-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-moz-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-ms-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@-o-keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}@keyframes -amp-start{from{visibility:hidden}to{visibility:visible}}</style><noscript><style amp-boilerplate>body{-webkit-animation:none;-moz-animation:none;-ms-animation:none;animation:none}</style></noscript>
+
+
+    <style amp-custom>
+      /* any custom style goes here */
+
+      body {
+           background: #101010;
+          /* color: #F5F5F5;*/
+           font-family: 'Simonetta', cursive;
+           font-family:Lucida Sans Unicode;
+           margin: 0 auto;
+            }
+
+      h1{
+       font-family: 'Sail', cursive;
+       font-size: 2em;
+       text-align: center;
+       color: white;
+      }
+
+      h3{
+       font-family: 'Sail', cursive;
+       font-size: 1.4em;
+      }
+
+      h5{
+        color: white;
+      }
+
+       a{
+        color: gold;
+       }
+      .se_title{
+       font-family:Lucida Sans Unicode;
+ 
+      }
+
+
+      .stage_map{
+        background: #024ec9;
+        height: 20rem;
+        text-align: center;
+      }
+      .project_select{
+        background: #024ec9;
+        text-align: center;
+      }
+
+      .about{
+        height: 17rem;
+        text-align: center;
+      }
+
+      .about a{
+        color: white;
+      }
+
+      amp-img  img{
+        z-index: 0;
+          object-fit: contain;
+      }
+
+/*      amp-selector amp-img{
+         border: 2px solid red;
+         margin: 0px;
+         z-index: 2;
+      }*/
+
+      amp-selector amp-img:hover{
+         border: 3px solid gold;
+      }
+
+  /*    .amp-carousel-button { display: none }*/
+
+      .blurb{
+        z-index: 11;
+        font-size: 2em;
+        line-height: 100%;
+
+      }
+
+      .features{
+        padding-left: 1rem;
+      }
+
+      .banner{
+        float: ;
+        display: block;
+      }
+
+      .column {
+        float: left;
+        width: 33.33%;
+      }
+
+      .col_mid{
+        padding: 0rem 1rem;
+      }
+
+      .col_left{
+        float: left;
+        width: 50%
+      }
+
+      .col_right{
+        float: right;
+        width: 50%
+      }
+
+      .row{
+        height: 40rem;
+      }
+
+      /* Clear floats after the columns */
+      .row:after {
+          content: "";
+          display: table;
+          clear: both;
+      }
+      
+      @media screen and (max-width: 1100px) {
+      .player_2 {
+  
+      }
+
+        @media screen and (max-width: 1028px) {
+      .player_2 {
+
+      }
+
+      }
+
+        @media screen and (max-width: 840px) {
+      .column {
+          width: 100%;
+      }
+      }
+
+        @media screen and (max-width: 500px) {
+   /*   .stage_map amp-img{
+          width: 10%;
+      }*/
+      .col_first{
+    /*    display: none;*/
+      }
+      .col_right{
+        width: 100%;
+      }
+
+      .col_left{
+        width: 100%;
+      }
+
+
+      }
+    </style>
+
+  </head>
+  <body>
+      <div>
+        <h1> Alfonso Arriola: <br> <br>
+          <div class="tilt">
+               <span class='se_title'> FULLSTACK
+                <br>
+              ENGINEER
+           </div>
+        </h1>
+      </div>
+      <div class="project_select">
+                <div class="row">
+                  <div class="column col_first">
+                     <p class="m1"> <h2> Project Select: <br>
+                                <span [text]="+selectedSlide + 1">1</span>/3
+                                </h2>
+                             </p>
+                            <amp-selector layout="container"
+                                name="carousel-selector"
+                                [selected]="selectedSlide"
+                                on="select:AMP.setState({selectedSlide: event.targetOption})">
+                                <amp-carousel controls
+                                  width="400"
+                                  height="100">
+                                  <amp-img src="images/cherrybomb.jpg"
+                                    width="100"
+                                    height="75"
+                                    option="0"></amp-img>
+                                  <amp-img src="images/panel.jpg"
+                                    width="100"
+                                    height="75"
+                                    option="1"></amp-img>
+                                  <amp-img src="images/freshcity.jpg"
+                                    width="100"
+                                    height="75"
+                                    option="2"></amp-img>
+                                </amp-carousel>
+                              </amp-selector>
+
+                  </div>
+                  <div class="column col_mid">
+                         
+
+
+                                <amp-carousel controls
+                                    type="slides"
+                                    width="300"
+                                    height="300"
+                                    layout="responsive"
+                                    [slide]="selectedSlide"
+                                    on="slideChange:AMP.setState({selectedSlide: event.index})">
+                                   <div class="features">
+                                  
+                                      <div>
+                                         <h2> <u> Cherry Bomb Gym</u></h2>
+                                      </div>
+                                         <br>
+                                          <div>
+                                              <h2> <u> Description</u></h2>
+                                                For a fictitious Pokemon Trainer to showcase their favorite Pokemon.
+                                          </div>
+                                             <br>
+                                          <div> 
+                                            <h2> <u>Features</u></h2>
+                                             <ul>
+                                               <li> API GET request to pull information on Pokemon.</li>
+                                             </ul>
+                                          </div>
+                                         
+                                          <br>
+                                         <!-- <div>
+                                          <h2> Link:</h2>
+                                            <a href="https://alfonsoarriola.github.io/Pokemon_Champions/">Click Here</a>
+                                         </div> -->
+                            
+                                   </div>  
+                                   <div class="features">
+                                      <div>
+                                         <h2> <u> Bronx School Of Coding</u></h2>
+                                      </div>
+                                         <br>
+                                         <div>
+                                              <h2> <u> Description</u></h2>
+                                                An administrator panel for a fictitious school, used to account for students, professors, courses & cohorts.
+                                          </div>
+                                             <br>
+                                          <div> 
+                                            <h2><u>Features</u> </h2>
+                                             <ul>
+                                               <li> Built with Ruby On Rails</li>
+                                               <li> <i>Devise</i> gem for Admin & User access.</li>
+                                               <li>  <i>i18n</i> gem for bilinugal use.</li>
+                                             </ul>
+                                          </div>
+                                         
+                                          <br>
+                                        <!--  <div>
+                                          <h2> Link:</h2>
+                                            <a href="https://pams-panel.herokuapp.com/">Click Here</a>
+                                         </div> -->
+                                   </div> 
+                                   <div class="features">
+                                      <div>
+                                         <h2> <u> Fresh City</u></h2>
+                                      </div>
+                                         <br>
+                                         <div>
+                                              <h2> <u> Description</u></h2>
+                                                A database that holds information for free & cheap showers within New York City.
+                                          </div>
+                                             <br>
+                                          <div> 
+                                            <h2><u>Features</u> </h2>
+                                             <ul>
+                                               <li> Built with Ruby On Rails</li>
+                                               <li> <i>Devise</i> gem for Admin access.</li>
+                                               <li>  <i>i18n</i> gem for multilinugal use.</li>
+                                             </ul>
+                                          </div>
+                                         
+                                          <br>
+                                        <!--  <div>
+                                          <h2> Link:</h2>
+                                            <a href="https://pams-panel.herokuapp.com/">Click Here</a>
+                                         </div> -->
+                                   </div>               
+                                  </amp-carousel>
+
+                            
+                  </div>
+                  <div class="column">
+                            <amp-carousel controls
+                                    type="slides"
+                                    width="400"
+                                    height="400"
+                                    layout="responsive"
+                                    [slide]="selectedSlide"
+                                    on="slideChange:AMP.setState({selectedSlide: event.index})">
+                                     <a href="https://alfonsoarriola.github.io/Pokemon_Champions/"><amp-img src="images/cherrybomb.jpg"
+                                      width="500"
+                                    height="450"
+                                    layout="responsive"></amp-img>
+                                      </a>
+
+                                      <a href="https://pams-panel.herokuapp.com/">
+                                         <amp-img src="images/panel.jpg"
+                                      width="500"
+                                    height="450"
+                                    layout="responsive"></amp-img>
+                                      </a>
+
+                                       <a href="https://github.com/AlfonsoArriola/Fresh_City">
+                                         <amp-img src="images/freshcity.jpg"
+                                      width="500"
+                                    height="450"
+                                    layout="responsive"></amp-img></amp-img>
+                                      </a>
+                          
+                              </amp-carousel>
+
+                  </div>
+                </div>
+      </div>
+
+    
+      <div class="about">
+       <h3> <a href="https://www.linkedin.com/in/alfonso-arriola/
+            ">Linkedin</a></h3> or 
+            <h3><a href="https://github.com/AlfonsoArriola"> Git Hub</a></h3>
+      
+
+             <h5> * powered by AMP *</h5>
+      </div>
+    
+
+       
+
+
+
+
+      
+            
+
+  </body>
+</html>
